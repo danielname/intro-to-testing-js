@@ -29,7 +29,19 @@ describe(`sayHello`, function() {
     it('should return `Hello, Pat!` when `Pat` is entered as an argument.', function () {
         expect(sayHello(`Pat`)).toBe(`Hello, Pat!`);
     });
-    it('should return any name that is inputted as an argument', function () {
-        expect(sayHello(input)).toBe(`Hello, ${input}!`)
+    it('should return any name that is inputted as an argument.', function () {
+        expect(sayHello(input)).toBe(`Hello, ${input}!`);
+    });
+    it('should return `Hello, World!` when the boolean `true` is entered as an argument.', function () {
+        expect(sayHello(true)).toBe(`Hello, World!`);
+    });
+    it('should return `Hello, World!` when the boolean `false` is entered as an argument.', function () {
+        expect(sayHello(false)).toBe(`Hello, World!`);
+    });
+    it('should return `Hello, World!` when the null is entered as an argument.', function () {
+        expect(sayHello(null)).toBe(`Hello, World!`);
+    });
+    it('should return `Hello, World!` when a number is entered as an argument.', function () {
+        expect(sayHello(4.2)).toBe(`Hello, World!`);
     });
 })
