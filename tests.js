@@ -17,7 +17,19 @@ describe(`sayHello`, function() {
     it('should be a defined function', function () {
         expect(typeof sayHello).toBe('function');
     });
-    it('should ', function () {
-        
+    it('should return a string', function () {
+        expect(typeof sayHello()).toBe(`string`);
+    });
+    it('should return `Hello, Jane!` when `Jane` is entered as an argument.', function () {
+        expect(sayHello(`Jane`)).toBe(`Hello, Jane!`);
+    });
+    it('should return `Hello, Alex!` when `Alex` is entered as an argument.', function () {
+        expect(sayHello(`Alex`)).toBe(`Hello, Alex!`);
+    });
+    it('should return `Hello, Pat!` when `Pat` is entered as an argument.', function () {
+        expect(sayHello(`Pat`)).toBe(`Hello, Pat!`);
+    });
+    it('should return any name that is inputted as an argument', function () {
+        expect(sayHello(input)).toBe(`Hello, ${input}!`)
     });
 })
