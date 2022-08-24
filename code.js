@@ -26,3 +26,11 @@ function isEven (arg) {
     }
 }
 
+function isVowel (arg) {
+    if (arg === `a` || arg === `e` || arg === `i` || arg === `o` || arg === `u` || arg === `A` || arg === `E` || arg === `I` || arg === `O` || arg === `U`) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
