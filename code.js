@@ -34,3 +34,10 @@ function isVowel (arg) {
     }
 }
 
+function add (input, input1) {
+    if (isNaN(parseFloat(input)) === true || isNaN(parseFloat(input1)) === true) {
+        return false;
+    } else {
+        return parseFloat(input) + parseFloat(input1);
+    }
+}

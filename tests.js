@@ -165,3 +165,51 @@ describe(`isVowel`, function(){
     });
 })
 
+describe('add', function() {
+    describe('core functionality', function() {
+        it('should be a defined function', function() {
+            expect(typeof add).toBe('function');
+        });
+        it('should return a number when passed two numbers', function() {
+            expect(typeof (add(1, 2))).toBe('number');
+        });
+        it('should return 4 when passed 1 and 3', function() {
+            expect(add(1, 3)).toBe(4);
+        });
+        it('should return ' + (19 + 2) + ' when passed ' + 19 + ' and 2', function() {
+            expect(add(19, 2)).toBe(19 + 2);
+        });
+        it('should return 5 when passed the numeric strings "2" and "3".', function() {
+            expect(add("2", "3")).toBe(5);
+        });
+        it('should return false when called with no arguments', function() {
+            expect(add()).toBe(false);
+        });
+    });
+    describe('validation', function() {
+        it('should return false when passed one numeric input and one non-number input', function() {
+            expect(add("Bob", 2)).toBe(false);
+        });
+        it('should return false when passed null', function() {
+            expect(add(null)).toBe(false);
+        });
+        it('should return false when passed non-numeric strings', function() {
+            expect(add("Bob", "Jane")).toBe(false);
+        });
+        it('should return false when passed two true boolean arguments', function() {
+            expect(add(true, true)).toBe(false);
+        });
+        it('should return false when passed two false boolean arguments', function() {
+            expect(add(false, false)).toBe(false);
+        });
+        it('should return false when passed a true and a false argument', function() {
+            expect(add(true, false)).toBe(false);
+        });
+        it('should return false when passed an array', function() {
+            expect(add([2,4])).toBe(false);
+        });
+        it('should return false when passed an object', function() {
+            expect(add({number1:2,number2:4})).toBe(false);
+        });
+    });
+});
