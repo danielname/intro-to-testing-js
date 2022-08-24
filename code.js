@@ -17,3 +17,12 @@ function isFive(arg) {
         return false;
     }
 }
+
+function isEven (arg) {
+    if (arg === 0 || arg === true || arg === false) {
+        return false;
+    } else {
+        return arg % 2 === 0;
+    }
+}
+

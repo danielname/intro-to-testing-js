@@ -89,3 +89,42 @@ describe('isFive', function (){
         expect(isFive(Math.ceil(Math.random()*9999999999) + 5.1)).toBe(false);
         });
 })
+
+describe(`isEven`, function(){
+    it('should be a defined function', function () {
+        expect(typeof isEven).toBe('function');
+    });
+    it('should return a boolean', function () {
+        expect(typeof isEven()).toBe(`boolean`);
+    });
+    it('should return `true` when passed a positive even number', function () {
+        expect(isEven(2)).toBe(true);
+    });
+    it('should return `true` when passed a negative even number', function () {
+        expect(isEven(-4)).toBe(true);
+    });
+    it('should return `false` when passed a positive odd number', function () {
+        expect(isEven(3)).toBe(false);
+    });
+    it('should return `false` when passed a negative odd number', function () {
+        expect(isEven(-5)).toBe(false);
+    });
+    it('should return `false` when passed a non-numeric string', function () {
+        expect(isEven("banana")).toBe(false);
+    });
+    it('should return `false` when passed a boolean', function () {
+        expect(isEven(false)).toBe(false);
+    });
+    it('should return `false` when passed Infinity', function () {
+        expect(isEven(Infinity)).toBe(false);
+    });
+    it('should return `true` when passed an even numeric string', function () {
+        expect(isEven("8")).toBe(true);
+    });
+    it('should return `false` when called without an argument', function () {
+        expect(isEven()).toBe(false);
+    });
+    it('should return `false` when passed 0', function () {
+        expect(isEven(0)).toBe(false);
+    });
+})
