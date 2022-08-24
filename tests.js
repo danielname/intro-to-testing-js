@@ -128,3 +128,40 @@ describe(`isEven`, function(){
         expect(isEven(0)).toBe(false);
     });
 })
+
+describe(`isVowel`, function(){
+    it('should be a defined function', function () {
+        expect(typeof isVowel).toBe('function');
+    });
+    it('should return a boolean', function () {
+        expect(typeof isVowel()).toBe(`boolean`);
+    });
+    it('should return `true` when passed a lowercase vowel string', function () {
+        expect(isVowel("a")).toBe(true);
+    });
+    it('should return `true` when passed an uppercase vowel string', function () {
+        expect(isVowel("E")).toBe(true);
+    });
+    it('should return `false` when passed a number', function () {
+        expect(isVowel(5)).toBe(false);
+    });
+    it('should return `false` when passed a boolean', function () {
+        expect(isVowel(true)).toBe(false);
+    });
+    it('should return `false` when passed a string that is more than one letter long', function () {
+        expect(isVowel(`candy`)).toBe(false);
+    });
+    it('should return `false` when passed an empty string', function () {
+        expect(isVowel(``)).toBe(false);
+    });
+    it('should return `false` when passed null', function () {
+        expect(isVowel(null)).toBe(false);
+    });
+    it('should return `false` when called without an argument', function () {
+        expect(isVowel(undefined)).toBe(false);
+    });
+    it('should reject "y" as a vowel', function () {
+        expect(isVowel("y")).toBe(false);
+    });
+})
+
