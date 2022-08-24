@@ -59,3 +59,33 @@ describe(`sayHello`, function() {
         });
     })
 })
+
+describe('isFive', function (){
+        it('should be a defined function', function () {
+            expect(typeof isFive).toBe('function');
+        });
+        it('should return a boolean', function () {
+            expect(typeof isFive()).toBe(`boolean`);
+        });
+        it('should return `true` when passed 5', function () {
+            expect(isFive(5)).toBe(true);
+        });
+        it('should return `true` when passed the numeric string "5"', function () {
+            expect(isFive(`5`)).toBe(true);
+        });
+        it('should return `true` when passed the string "five"', function () {
+            expect(isFive(`five`)).toBe(true);
+        });
+        it('should return `false` when passed a boolean', function () {
+        expect(isFive(true)).toBe(false);
+        });
+        it('should return `false` when passed null', function () {
+        expect(isFive(null)).toBe(false);
+        });
+        it('should return `false` when no argument is entered', function () {
+            expect(isFive(undefined)).toBe(false);
+        });
+        it('should return `false` when any number that is not 5 is passed', function () {
+        expect(isFive(Math.ceil(Math.random()*9999999999) + 5.1)).toBe(false);
+        });
+})
